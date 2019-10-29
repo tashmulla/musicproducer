@@ -1,4 +1,4 @@
-import React from 'react';
+import React, {Component} from 'react';
 import './App.css';
 import Glossary from './components/Glossary';
 import NavBar from './components/NavBar';
@@ -6,21 +6,33 @@ import Homepage from './components/Homepage';
 import Editor from './components/Editor';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
-function App() {
-  return (
-    <div>
+class App extends Component {
 
-    <Router>
-      <NavBar/>
-        <Switch>
-          <Route path="/" exact component={Homepage}/> 
-          <Route path="/glossary" component={Glossary}/>
-          <Route path="/editor" component={Editor}/>
-        </Switch>
-    </Router>
+  constructor() {
+    super()
+    this.componentDidMount()
+  }
 
-    </div>
-  );
+  componentDidMount = () => {
+    document.body.style.backgroundColor = "#2a2c30"
+  }
+
+  render() {
+    return (
+      <div>
+  
+      <Router>
+        <NavBar/>
+          <Switch>
+            <Route path="/" exact component={Homepage}/> 
+            <Route path="/glossary" component={Glossary}/>
+            <Route path="/editor" component={Editor}/>
+          </Switch>
+      </Router>
+  
+      </div>
+    );
+  }
 }
 
 export default App;

@@ -7,7 +7,7 @@
   justify-content: space-around;
   align-items: center;
   min-height: 10vh;
-  background: rgb(131, 24, 24);
+  background: rgb(32, 63, 46);
   color: white;
 }
 
@@ -20,12 +20,35 @@
 }
 
 .glossary {
-  display: flex;
-  align-items: center;
+  color: white;
+  font-size: 25px;
+  margin-top: 10%;
+  margin-left: 20%;
   justify-content: center;
+  align-items: center;
+  display: flex;
 }
 
 .glossaryList {
   list-style: none;
   font-weight: bold;
+}
+
+.editor {
+  margin-top: 10%;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+}
+
+.volume-slider {
+  position: relative;
+}
+
+.crossfade-slider {
+  position: relative;
+}
+
+.gain-slider {
+  position: relative;
 }
