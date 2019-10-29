@@ -1,13 +1,18 @@
-import React from 'react';
+import React, {Component} from 'react';
 import Typography from '@material-ui/core/Typography'
 
-const Editor = () => {
+class Editor extends Component {
 
-    return(
-        <div>
-            <Typography color='inherit' variant='body1'>Edit your tracks here.</Typography>
-        </div>
-    )
+    render() {
+        return(
+            <div>
+                <span>&nbsp;&nbsp;</span>
+                <Typography color='inherit' variant='body1'>
+                    Edit your tracks here.
+                </Typography>
+            </div>
+        )
+    }
 }
 
 export default Editor;

@@ -18,3 +18,14 @@
   align-items: center;
   list-style: none;
 }
+
+.glossary {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.glossaryList {
+  list-style: none;
+  font-weight: bold;
+}

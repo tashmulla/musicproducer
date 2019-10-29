@@ -5,26 +5,28 @@ import org.json.JSONObject;
 
 public class Glossary {
 
-    public Glossary() {
+    public String name;
+    public String description;
 
+    public Glossary(String name, String description) {
+        this.name = name;
+        this.description = description;
     }
 
-    public JSONObject createMethod(String name, String description) {
-
-        JSONObject method = new JSONObject();
-        method.put("name", name);
-        method.put("description", description);
-        return method;
+    public String getGlossaryName() {
+        return name;
     }
 
-    public JSONArray addToGlossary(JSONObject method) {
-
-        JSONArray array = new JSONArray();
-        array.put(method);
-        return array;
+    public void setGlossaryName(String name) {
+        this.name = name;
     }
 
-    public String convertToString(Glossary glossary) {
-        return glossary.toString();
+    public String getDescription() {
+        return description;
+    }
+
+    public void setDescription(String description) {
+        this.description = description;
     }
 }
+
