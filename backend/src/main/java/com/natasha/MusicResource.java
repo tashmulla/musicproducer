@@ -34,7 +34,7 @@ public class MusicResource {
         compression.put("description","Making a larger file smaller to save space");
 
         JSONObject frequency = new JSONObject();
-        frequency.put("name","diffusion");
+        frequency.put("name","frequency");
         frequency.put("description","Number of times per second that a sound wave’s cycle repeats");
 
         array.put(diffusion);
