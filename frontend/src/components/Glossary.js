@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import '../App.css';
-import NavBar from './NavBar';
 
 const api = "http://localhost:7090/edits/glossary"
 
@@ -10,7 +9,12 @@ class Glossary extends Component {
         items: []
     }
 
-    componentDidMount() {
+    constructor() {
+        super()
+        this.getGlossaryItems()
+    }
+
+    getGlossaryItems = () => {
         fetch(api)
         .then(res => res.json())
         .then((data) => {
@@ -20,10 +24,10 @@ class Glossary extends Component {
             })
         })
     }
+
     render() {
         return (
             <div>
-            <NavBar />
             <ul>
                 {this.state.items.map(item => (
                     <li key={item.name}>

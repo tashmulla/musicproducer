@@ -2,6 +2,19 @@
   text-align: center;
 }
 
-h1 {
-  text-align: center;
+.nav {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  min-height: 10vh;
+  background: rgb(131, 24, 24);
+  color: white;
+}
+
+.nav-links {
+  width:50%;
+  display:flex;
+  justify-content: space-around;
+  align-items: center;
+  list-style: none;
 }

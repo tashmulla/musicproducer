@@ -1,16 +1,25 @@
 import React from 'react';
 import './App.css';
 import Glossary from './components/Glossary';
-import {BrowserRouter as Router, Route} from 'react-router-dom';
+import NavBar from './components/NavBar';
+import Homepage from './components/Homepage';
+import Editor from './components/Editor';
+import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
 function App() {
   return (
+    <div>
+
     <Router>
-      <Route path="/glossary">
-        <Glossary />
-      </Route>
+      <NavBar/>
+        <Switch>
+          <Route path="/" exact component={Homepage}/> 
+          <Route path="/glossary" component={Glossary}/>
+          <Route path="/editor" component={Editor}/>
+        </Switch>
     </Router>
-    
+
+    </div>
   );
 }
 

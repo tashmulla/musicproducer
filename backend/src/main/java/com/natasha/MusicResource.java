@@ -26,15 +26,15 @@ public class MusicResource {
         JSONArray array = new JSONArray();
 
         JSONObject diffusion = new JSONObject();
-        diffusion.put("name","diffusion");
+        diffusion.put("name","Diffusion");
         diffusion.put("description","Scattering a sound wave's frequencies");
 
         JSONObject compression = new JSONObject();
-        compression.put("name","compression");
+        compression.put("name","Compression");
         compression.put("description","Making a larger file smaller to save space");
 
         JSONObject frequency = new JSONObject();
-        frequency.put("name","frequency");
+        frequency.put("name","Frequency");
         frequency.put("description","Number of times per second that a sound wave’s cycle repeats");
 
         array.put(diffusion);
