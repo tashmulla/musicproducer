@@ -1,6 +1,8 @@
 import React from 'react';
-import { makeStyles } from '@material-ui/core/styles';
 import Slider from '@material-ui/core/Slider';
+import { createMuiTheme, makeStyles, ThemeProvider } from '@material-ui/core/styles';
+import { styled } from '@material-ui/core/styles';
+import { red } from '@material-ui/core/colors';
 
 const useStyles = makeStyles(theme => ({
   root: {
@@ -11,12 +13,20 @@ const useStyles = makeStyles(theme => ({
   },
 }));
 
+const styledSlider = styled(Slider)({
+  width: 250,
+  border: 0,
+  borderRadius: 3,
+  color: 'yellow'
+});
+
 export default function VocalSlider() {
-  const classes = useStyles();
+
+  const SliderStyle = styledSlider;
 
   return (
-    <div className={classes.root}>
-      <Slider
+    <div>
+      <SliderStyle
         defaultValue={50}
         aria-labelledby="discrete-slider"
         valueLabelDisplay="auto"

@@ -34,11 +34,18 @@
   font-weight: bold;
 }
 
-.editor {
-  margin-top: 10%;
-  justify-content: center;
+.sliders {
+  margin-top: 5%;
+  margin-left: 3%;
+  justify-content: left;
   align-items: center;
   display: flex;
+}
+
+.controls {
+  margin-top: 1%;
+  position: relative;
+  justify-content: space-between;
 }
 
 .volume-slider {
@@ -51,4 +58,16 @@
 
 .gain-slider {
   position: relative;
+}
+
+.upload {
+  position: relative;
+  justify-content: space-between;
+  display: flex;
+  height: 30px;
+}
+
+.top-controls {
+  display: flex;
+  flex-direction: row;
 }
