@@ -15,7 +15,6 @@ public class MusicApplication extends Application {
         corsFilter.getAllowedOrigins().add("*");
         corsFilter.setAllowedMethods("OPTIONS, GET, POST, DELETE, PUT, PATCH");
         singletons.add(corsFilter);
-
         singletons.add(new MusicResource());
     }
 

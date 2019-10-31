@@ -1,11 +1,11 @@
 import React, {Component} from 'react';
 import Typography from '@material-ui/core/Typography';
 import Slider from '../interfaces/Slider';
-import ContainedButtons from '../interfaces/buttons/playButton';
 import { Button, PlayerIcon } from 'react-player-controls'
 import { Container, Row, Col } from 'reactstrap';
 import '../App.css';
 import Divider from '@material-ui/core/Divider';
+import UploadTrack from '../interfaces/uploadTrack';
 
 class Editor extends Component {
       
@@ -17,33 +17,37 @@ class Editor extends Component {
                         <Container className="controls">
                             <Row>                                    
                                 <Col className="top-controls">
-                                    <Divider width="50"/>
-                                    <Button className="upload"
+                                    <Divider width="50px" className="first-divider"/>
+                                    <Button className="upload" onClick={() => alert('Upload')}
                                         style={{fontSize:15, fontWeight:"bold"}}>
-                                            Upload Track
-                                    </Button> 
-                                    <Divider width="550"/>                           
-                                    <Button onClick={() => alert('clicked')}>
+                                            Upload
+                                    </Button>
+                                    <Divider width="10px" className="second-divider" />
+                                    <Button className="save" onClick={() => alert('Save')}
+                                         style={{fontSize:15, fontWeight:"bold"}}>
+                                             Save
+                                    </Button>
+                                    <Divider width="550px" className="third-divider" />                           
+                                    <Button onClick={() => alert('clicked')} className="previous-button">
                                         <PlayerIcon.Previous
-                                        className="previous-button"
                                         width={40}
                                         height={40}/>
                                     </Button>
-                                    <Button onClick={() => alert('clicked')}>
+                                    <Button onClick={() => alert('clicked')} className="play-button">
                                         <PlayerIcon.Play
-                                        className="play-button"
+                                        
                                         width={40}
                                         height={40}/>
                                     </Button>
-                                    <Button onClick={() => alert('clicked')}>
+                                    <Button onClick={() => alert('clicked')} className="pause-button">
                                         <PlayerIcon.Pause
-                                        className="pause-button"
+                                        
                                         width={40}
                                         height={40}/>
                                     </Button>
-                                    <Button onClick={() => alert('clicked')}>
+                                    <Button onClick={() => alert('clicked')} className="next-button">
                                         <PlayerIcon.Next
-                                        className="next-button"
+                                        
                                         width={40}
                                         height={40}/>
                                     </Button>       
@@ -52,6 +56,10 @@ class Editor extends Component {
                         </Container>
                     </Row>
                 </Container>
+
+                <div>
+                <UploadTrack />
+                </div>
 
                 <div className="sliders">
                     <Container>

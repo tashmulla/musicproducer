@@ -77,5 +77,10 @@
             <version>2.2.2</version>
             <scope>compile</scope>
         </dependency>
+        <dependency>
+            <groupId>org.jboss.resteasy</groupId>
+            <artifactId>resteasy-multipart-provider</artifactId>
+            <version>3.9.0.Final</version>
+        </dependency>
     </dependencies>
 </project>

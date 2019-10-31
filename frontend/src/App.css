@@ -2,6 +2,7 @@
   text-align: center;
 }
 
+/* Nav Bar */
 .nav {
   display: flex;
   justify-content: space-around;
@@ -19,6 +20,7 @@
   list-style: none;
 }
 
+/* Glossary */
 .glossary {
   color: white;
   font-size: 25px;
@@ -34,18 +36,13 @@
   font-weight: bold;
 }
 
+/* Sliders */ 
 .sliders {
   margin-top: 5%;
   margin-left: 3%;
   justify-content: left;
   align-items: center;
   display: flex;
-}
-
-.controls {
-  margin-top: 1%;
-  position: relative;
-  justify-content: space-between;
 }
 
 .volume-slider {
@@ -60,14 +57,63 @@
   position: relative;
 }
 
-.upload {
-  position: relative;
-  justify-content: space-between;
-  display: flex;
-  height: 30px;
-}
-
+/* Controls */
 .top-controls {
   display: flex;
   flex-direction: row;
+  border: none;
+  margin-top: 1%;
+}
+
+.first-divider {
+  visibility: hidden;
+}
+
+.second-divider {
+  visibility: hidden;
+}
+
+.third-divider {
+  visibility: hidden;
+}
+.upload {
+  justify-content: space-between;
+  display: flex;
+  height: 45px;
+  border-radius: 15px;
+  background-color: #135832;
+  color: white;
+}
+
+.save {
+  height: 45px;
+  width: 69px;
+  border-radius: 15px;
+  background-color: #135832;
+  color: white;
+}
+
+/* Control buttons */
+.previous-button {
+  /* border-radius: 15px; */
+  background-color: #135832;
+  border-color: black;
+}
+
+.play-button {
+  /* border-radius: 15px; */
+  background-color: #135832;
+  border-color: black;
+}
+
+.pause-button {
+  /* border-radius: 15px; */
+  background-color: #135832;
+  border-color: black;
+}
+
+.next-button {
+  /* border-radius: 15px; */
+  background-color: #135832;
+  border-color: black;
 }

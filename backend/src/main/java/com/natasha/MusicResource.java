@@ -1,19 +1,17 @@
 package com.natasha;
 
-import com.natasha.models.Glossary;
 import com.natasha.utils.GlossaryUtils;
-import org.json.JSONArray;
-import org.json.JSONObject;
 import org.json.simple.parser.ParseException;
 
-import javax.ws.rs.Consumes;
-import javax.ws.rs.GET;
-import javax.ws.rs.Path;
-import javax.ws.rs.Produces;
+import javax.ws.rs.*;
 import javax.ws.rs.core.MediaType;
+import org.jboss.resteasy.plugins.providers.multipart.MultipartFormDataInput;
+
 import javax.ws.rs.core.Response;
 import java.io.IOException;
 import java.util.logging.Logger;
+
+import static com.natasha.utils.FileUtils.*;
 
 @Path("/edits")
 public class MusicResource {
@@ -23,10 +21,29 @@ public class MusicResource {
     @GET
     @Path("/glossary")
     @Produces(MediaType.APPLICATION_JSON)
-    public Response test() throws IOException, ParseException {
+    public Response glossary() throws IOException, ParseException {
 
         String glossaryList = GlossaryUtils.getGlossary();
         LOGGER.info("/edits/glossary");
         return Response.status(200).entity(glossaryList).build();
+    }
+
+    @POST
+    @Path("/upload")
+    @Consumes(MediaType.MULTIPART_FORM_DATA)
+    @Produces(MediaType.APPLICATION_JSON)
+    public Response upload(MultipartFormDataInput file) {
+
+        String filename = uploadFile(file);
+
+        return Response.status(200)
+                .entity("Uploaded file: " + filename)
+                .header("Access-Control-Allow-Origin", "*")
+                .header("Access-Control-Allow-Credentials", "true")
+                .header("Access-Control-Allow-Headers",
+                        "origin, content-type, accept, authorization")
+                .header("Access-Control-Allow-Methods",
+                        "GET, POST, PUT, DELETE, OPTIONS, HEAD")
+                .build();
     }
 }
