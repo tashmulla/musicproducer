@@ -27,6 +27,16 @@ class Glossary extends Component {
         })
     }
 
+    resize = () => this.forceUpdate()
+
+    componentDidMount() {
+        window.addEventListener('resize', this.resize)
+    }
+
+    componentWillUnmount() {
+        window.removeEventListener('resize', this.resize)
+    }
+
     createGlossaryTable = () => {
 
         return this.state.items.map(item => {

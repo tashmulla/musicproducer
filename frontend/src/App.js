@@ -24,9 +24,8 @@ class App extends Component {
       <Router>
         <NavBar/>
           <Switch>
-            <Route path="/" exact component={Homepage}/> 
+            <Route path="/" exact component={Editor}/> 
             <Route path="/glossary" component={Glossary}/>
-            <Route path="/editor" component={Editor}/>
           </Switch>
       </Router>
   
