@@ -6,7 +6,7 @@ const styledSlider = styled(Slider)({
   width: 250,
   border: 0,
   borderRadius: 3,
-  color: '#135832'
+  color: 'rgb(228, 166, 52)'
 });
 
 export default function VocalSlider() {

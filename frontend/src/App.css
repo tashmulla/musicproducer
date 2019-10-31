@@ -23,17 +23,12 @@
 /* Glossary */
 .glossary {
   color: white;
-  font-size: 25px;
-  margin-top: 10%;
-  margin-left: 20%;
+  font-size: 15px;
+  margin-top: 5%;
+  margin-left: 10%;
   justify-content: center;
   align-items: center;
   display: flex;
-}
-
-.glossaryList {
-  list-style: none;
-  font-weight: bold;
 }
 
 /* Sliders */ 
@@ -42,7 +37,7 @@
   margin-left: 3%;
   justify-content: left;
   align-items: center;
-  display: flex;
+  display: block;
 }
 
 .volume-slider {
@@ -57,7 +52,19 @@
   position: relative;
 }
 
+.knobs {
+  display: flex;
+  flex-direction: row;
+  margin-left: 1.5%;
+  margin-top: 2%;
+  align-items: center;
+}
+
 /* Controls */
+
+.controls {
+  margin-left: 3%;
+}
 .top-controls {
   display: flex;
   flex-direction: row;
@@ -65,55 +72,68 @@
   margin-top: 1%;
 }
 
-.first-divider {
+.editor-divider-1 {
   visibility: hidden;
 }
 
-.second-divider {
+.upload-divider-1 {
   visibility: hidden;
 }
 
-.third-divider {
+.editor-divider-2 {
   visibility: hidden;
 }
-.upload {
+
+.upload-button {
   justify-content: space-between;
   display: flex;
-  height: 45px;
-  border-radius: 15px;
+  height: 20px;
   background-color: #135832;
   color: white;
+  font-size: 12px;
+  font-weight: bold;
 }
 
-.save {
-  height: 45px;
-  width: 69px;
-  border-radius: 15px;
+.upload-track {
+  display: flex;
+  flex-direction: row;
+}
+
+::-webkit-file-upload-button {
   background-color: #135832;
   color: white;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.choose-track {
+  width:190px;
+  color: white; 
+  font-size: 13px;
 }
 
 /* Control buttons */
 .previous-button {
   /* border-radius: 15px; */
-  background-color: #135832;
-  border-color: black;
+  background-color: rgb(228, 166, 52);
+  border-color: white;
+  border-style: double; 
 }
 
 .play-button {
   /* border-radius: 15px; */
-  background-color: #135832;
-  border-color: black;
+  background-color: rgb(228, 166, 52);
+  border-color: white;
 }
 
 .pause-button {
   /* border-radius: 15px; */
-  background-color: #135832;
-  border-color: black;
+  background-color: rgb(228, 166, 52);
+  border-color: white;
 }
 
 .next-button {
   /* border-radius: 15px; */
-  background-color: #135832;
-  border-color: black;
+  background-color: rgb(228, 166, 52);
+  border-color: white;
 }

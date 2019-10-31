@@ -1,31 +1,19 @@
 [
 	{
-		"name": "DIFFUSION",
-		"description": "Scattering a sound wave’s frequencies"
+		"name": "CROSSFADE",
+		"description": "Making a smooth transition between files"
 	},
 	{
-		"name": "COMPRESSION",
-		"description": "Making a larger file smaller to save space"
+		"name": "GAIN",
+		"description": "Loudness of the audio"
 	},
 	{
-		"name": "FREQUENCY",
-		"description": "Number of times per second that a sound wave’s cycle repeats"
+		"name": "FADE",
+		"description": "Gradual increase or decrease in level of audio signal"
 	},
 	{
 		"name": "PREAMP",
 		"description": "Boosts microphone signals to a level we can hear them"
-	},
-	{
-		"name": "WAVEFORM",
-		"description": "Graphical display of a sound pressure wave over time"
-	},
-	{
-		"name": "POLAR PATTERN",
-		"description": "Sensitivity of a microphone to sounds coming from any given angle"
-	},
-	{
-		"name": "NYQUIST FREQUENCY",
-		"description": "Equal to half the sample rate"
 	},
 	{
 		"name": "GROUND LIFT",

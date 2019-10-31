@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import axios from 'axios';
+import { Button } from 'react-player-controls';
+import { Container, Row, Col } from 'reactstrap';
+import Divider from '@material-ui/core/Divider';
+import '../App.css';
 const uploadREST = "http://localhost:7090/edits/upload";
 
 class UploadTrack extends Component {
@@ -70,8 +74,24 @@ class UploadTrack extends Component {
     render() {
         return (
             <div>
-                <input type="file" name="file" onChange={this.onChangeHandler}/>
-                <button type="button" className="btn btn-success btn-block" onClick={this.onClickHandler}>Upload</button>
+                <Container>
+                    <Row>
+                        <Col className="upload-track">
+                            <input
+                                type="file"
+                                name="file"
+                                id="choose-button"
+                                className="choose-track"
+                                onChange={this.onChangeHandler}
+                            />
+                            <Divider width="1px" className="upload-divider-1"/>
+
+                            <Button className="upload-button" onClick={() => this.onClickHandler()}>
+                                    Upload
+                            </Button>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
 
         );

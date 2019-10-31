@@ -6,8 +6,25 @@ import { Container, Row, Col } from 'reactstrap';
 import '../App.css';
 import Divider from '@material-ui/core/Divider';
 import UploadTrack from '../interfaces/uploadTrack';
+import RotaryKnob from '../interfaces/rotaryKnob';
 
 class Editor extends Component {
+
+    previousTrack = () => {
+        console.log("Previous track");
+    }
+
+    playTrack = () => {
+        console.log("Playing track");
+    }
+
+    pauseTrack = () => {
+        console.log("Pausing track");
+    }
+
+    nextTrack = () => {
+        console.log("Next track");
+    }
       
     render() {
         return(
@@ -16,50 +33,36 @@ class Editor extends Component {
                     <Row>
                         <Container className="controls">
                             <Row>                                    
-                                <Col className="top-controls">
-                                    <Divider width="50px" className="first-divider"/>
-                                    <Button className="upload" onClick={() => alert('Upload')}
-                                        style={{fontSize:15, fontWeight:"bold"}}>
-                                            Upload
-                                    </Button>
-                                    <Divider width="10px" className="second-divider" />
-                                    <Button className="save" onClick={() => alert('Save')}
-                                         style={{fontSize:15, fontWeight:"bold"}}>
-                                             Save
-                                    </Button>
-                                    <Divider width="550px" className="third-divider" />                           
-                                    <Button onClick={() => alert('clicked')} className="previous-button">
+                                <Col className="top-controls">                                    
+
+                                    <UploadTrack />
+
+                                    <Divider width="550px" className="editor-divider-2" />                           
+                                    <Button onClick={() => this.previousTrack()} className="previous-button">
                                         <PlayerIcon.Previous
-                                        width={40}
-                                        height={40}/>
+                                        width={20}
+                                        height={20}/>
                                     </Button>
-                                    <Button onClick={() => alert('clicked')} className="play-button">
+                                    <Button onClick={() => this.playTrack()} className="play-button">
                                         <PlayerIcon.Play
-                                        
-                                        width={40}
-                                        height={40}/>
+                                        width={20}
+                                        height={20}/>
                                     </Button>
-                                    <Button onClick={() => alert('clicked')} className="pause-button">
-                                        <PlayerIcon.Pause
-                                        
-                                        width={40}
-                                        height={40}/>
+                                    <Button onClick={() => this.pauseTrack()} className="pause-button">
+                                        <PlayerIcon.Pause                                        
+                                        width={20}
+                                        height={20}/>
                                     </Button>
-                                    <Button onClick={() => alert('clicked')} className="next-button">
-                                        <PlayerIcon.Next
-                                        
-                                        width={40}
-                                        height={40}/>
+                                    <Button onClick={() => this.nextTrack()} className="next-button">
+                                        <PlayerIcon.Next                                        
+                                        width={20}
+                                        height={20}/>
                                     </Button>       
                                 </Col>                                 
                             </Row>                    
                         </Container>
                     </Row>
                 </Container>
-
-                <div>
-                <UploadTrack />
-                </div>
 
                 <div className="sliders">
                     <Container>
@@ -91,6 +94,37 @@ class Editor extends Component {
                                 </Typography>
                                 <Slider/>
                             </Col>
+                            <div className="knobs">
+                                <Col>
+                                    <Typography style={{color:"white",
+                                                        fontSize:"10px",
+                                                        textAlign: "center",
+                                                        fontWeight: "bold"}}>
+                                        PREAMP
+                                    </Typography>
+                                    <RotaryKnob />
+                                </Col>
+                                <Divider width="20px"/>
+                                <Col>
+                                    <Typography style={{color:"white",
+                                                        fontSize:"10px",
+                                                        textAlign:"center",
+                                                        fontWeight: "bold"}}>
+                                        LIFT
+                                    </Typography>
+                                    <RotaryKnob />
+                                </Col>
+                                <Divider width="20px"/>
+                                <Col>
+                                    <Typography style={{color:"white",
+                                                        fontSize:"10px",
+                                                        textAlign: "center",
+                                                        fontWeight: "bold"}}>
+                                        FADE
+                                    </Typography>
+                                    <RotaryKnob />
+                                </Col>
+                            </div>
                         </Row>
                     </Container>
                 </div>
