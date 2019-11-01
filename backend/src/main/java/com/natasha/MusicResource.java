@@ -34,6 +34,7 @@ public class MusicResource {
     @Produces(MediaType.APPLICATION_JSON)
     public Response upload(MultipartFormDataInput file) {
 
+        String resourcesPath = "/src/main/resources/uploads";
         String filename = uploadFile(file);
 
         return Response.status(200)

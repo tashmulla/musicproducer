@@ -27,14 +27,13 @@ public class FileUtils {
                 MultivaluedMap<String, String> header = part.getHeaders();
                 String filename = getFileName(header);
 
-                // Convert uploaded file to input stream
-                InputStream inputStream = part.getBody(InputStream.class, null);
-                byte[] filebytes = IOUtils.toByteArray(inputStream);
+                // Convert uploaded file to bytes
+                byte[] filebytes = createFileBytes(part);
 
-                Path currentDir = Paths.get("");
-                // Create file path to upload
-                String path = currentDir.toAbsolutePath() + "/src/main/resources/uploads";
-                File customDir = new File(path);
+                String mainResourcePath = "/src/main/resources/uploads";
+
+                String resourcePath = System.getProperty("RESOURCE_PATH") == null ? mainResourcePath : System.getProperty("RESOURCE_PATH");
+                File customDir = fileCreator(resourcePath);
 
                 if (!customDir.exists()) {
                     customDir.mkdir();
@@ -51,6 +50,24 @@ public class FileUtils {
         }
 
         return null;
+    }
+
+    public static File fileCreator(String resourcesPath) {
+
+        Path currentDir = Paths.get("");
+        String path = currentDir.toAbsolutePath() + resourcesPath;
+        File customDir = new File(path);
+
+        return customDir;
+
+    }
+
+    public static byte[] createFileBytes(InputPart part) throws IOException {
+
+        InputStream inputStream = part.getBody(InputStream.class, null);
+        byte[] filebytes = IOUtils.toByteArray(inputStream);
+
+        return filebytes;
     }
 
     public static String getFileName(MultivaluedMap<String, String> header) {
