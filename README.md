@@ -1,8 +1,8 @@
-# Music Composer
+# Music Producer
 
 ### Details
 
-I thought I'd give it a go at making a web-based music composer, with a Java RESTful backend and a React frontend. I haven't implemented actual audio track editing functionality yet, but I've at least added a few features to start with:
+I thought I'd give it a go at making a web-based music producer, with a Java RESTful backend and a React frontend. I haven't implemented actual audio track editing functionality yet, but I've at least added a few features to start with:
 
 #### Features
 
