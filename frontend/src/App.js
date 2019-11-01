@@ -2,7 +2,6 @@ import React, {Component} from 'react';
 import './App.css';
 import Glossary from './components/Glossary';
 import NavBar from './components/NavBar';
-import Homepage from './components/Homepage';
 import Editor from './components/Editor';
 import {BrowserRouter as Router, Route, Switch} from 'react-router-dom';
 
