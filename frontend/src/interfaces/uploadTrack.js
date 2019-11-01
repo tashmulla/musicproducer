@@ -3,6 +3,8 @@ import axios from 'axios';
 import { Button } from 'react-player-controls';
 import { Container, Row, Col } from 'reactstrap';
 import Divider from '@material-ui/core/Divider';
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 import '../App.css';
 const uploadREST = "http://localhost:7090/edits/upload";
 
@@ -12,7 +14,8 @@ class UploadTrack extends Component {
         super()
 
         this.state = {
-            selectedFile : null
+            selectedFile : null,
+            loaded : 0
         }
         this.onChangeHandler = this.onChangeHandler.bind(this);
     }
@@ -28,26 +31,30 @@ class UploadTrack extends Component {
     }
 
     onClickHandler = () => {
-        const data = new FormData() 
+
+        const data = new FormData();
         data.append('attachment', this.state.selectedFile)
 
         axios.post(
             uploadREST,
             data, {
-
             })
-      .then(res => { 
-        console.log(res)
-      })
+        .then(res => { 
+            console.log(res)
+            toast.success('upload success');
+        })
+        .catch(err => { 
+            toast.error('upload fail')
+        })
     }
 
     maxFiles = (event) =>{
         let files = event.target.files
-            if (files.length > 1) { 
-               const message = "The upload exceeds the 1 file max limit."
-               event.target.value = null
-               console.log(message)
-              return false;
+        if (files.length > 1) { 
+            const message = "The upload exceeds the 1 file max limit."
+            event.target.value = null
+            console.log(message)
+            return false;
           }
         return true;
      }
@@ -55,7 +62,7 @@ class UploadTrack extends Component {
      checkFileType = (event) => {
          let files = event.target.files[0]
          console.log(files)
-         const types = ["text/plain"]
+         const types = ["audio/mpeg3", "audio/mp3"]
          let err = ""
 
          if (!types.includes(files.type)) {
@@ -65,6 +72,7 @@ class UploadTrack extends Component {
          if (err !== "") {
              event.target.value = null
              console.log(err)
+             toast.error(err)
              return false;
          }
 
@@ -86,9 +94,18 @@ class UploadTrack extends Component {
                             />
                             <Divider width="1px" className="upload-divider-1"/>
 
-                            <Button className="upload-button" onClick={() => this.onClickHandler()}>
-                                    Upload
-                            </Button>
+                            <Button className="upload-button" onClick={() => {
+                                        if (this.state.selectedFile !== null) {
+                                            this.onClickHandler()
+                                        }
+                                        else {
+                                            toast.error('Upload a file first');
+                                        }
+                                    }
+                            }>
+                            Upload
+                            </Button>                        
+                            <ToastContainer />
                         </Col>
                     </Row>
                 </Container>
