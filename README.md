@@ -18,6 +18,6 @@ The backend is a Maven project, so can be run from the `backend` directory using
 
 #### Front-end
 
-The front-end can be run from the `frontend` directory using `npm start`
+The front-end can be run from the `frontend` directory using `npm start`. The application will be available at `localhost:3000`.
 
 
